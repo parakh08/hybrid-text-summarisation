@@ -15,4 +15,6 @@ To run the code:
 
 3) In the lines 20,21,22 you can change the the lines that you want to make a summary of rather than making of whole of the document
 
+Also you might have to download the nltk's averaged_perceptron_tagger, so just uncomment the line 6 in the hybrid.py
+
 

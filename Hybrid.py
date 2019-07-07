@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import os
 import bs4 as bs
 import urllib.request  
@@ -22,11 +16,8 @@ from gensim.summarization.commons import remove_unreachable_nodes as _remove_unr
 case_filenames = [f for f in os.listdir(DATASET_LOCATION) if not f.startswith(".") ]
 
 
-# In[2]:
-
-
 MAX_WORDS=100
-for i,case_filename in enumerate(case_filenames[0:5]):
+for i,case_filename in enumerate(case_filenames[:]):
     with open('{}/{}'.format(DATASET_LOCATION,case_filename)) as f:
         text = f.read().strip()
         text = text.split("\n",6)[6]
@@ -118,9 +109,6 @@ for i,case_filename in enumerate(case_filenames[0:5]):
     print("\n File : {} \n Summary : {} \n Words : {} \n".format(case_filename,summary,words_in_summary))
     q=open("{}/{}".format(DESTINATION_LOCATION,case_filename),"w")
     q.write(summary)
-
-
-# In[ ]:
 
 
 
